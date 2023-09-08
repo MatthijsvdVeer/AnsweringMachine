@@ -23,3 +23,25 @@ Here are some example question related to Azure functions
     ]
 }
 ```
+
+```
+{
+    "question": "Which of the following choices is required for a function to run?",
+    "answers":[
+        "Binding",
+        "Trigger",
+        "Both triggers and bindings"
+    ]
+}
+```
+
+```
+{
+    "question": "Which of the following choices supports both the in and out direction settings?",
+    "answers":[
+        "Bindings",
+        "Trigger",
+        "Connection value"
+    ]
+}
+```
