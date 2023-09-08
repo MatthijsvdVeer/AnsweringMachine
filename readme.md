@@ -5,11 +5,11 @@ Here are some example question related to Azure functions
 ```
 {
 "question": "An organization wants to implement a serverless workflow to solve a business problem. One of the requirements is the solution needs to use a designer-first (declarative) development model. Which of the choices below meets the requirements?",
-"answers":[
-"Azure Functions",
-"Azure Logic Apps",
-"Webjobs"
-]
+	"answers":[
+		"Azure Functions",
+		"Azure Logic Apps",
+		"Webjobs"
+	]
 }
 ```
 
