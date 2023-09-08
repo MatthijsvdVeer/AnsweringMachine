@@ -36,8 +36,7 @@ public class DoSearch
         var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
         dynamic data = JsonConvert.DeserializeObject(requestBody);
         string question = data?.question;
-        string answers = data?.answers;
-        
+        List<string> answers = data?.answers.ToObject<List<string>>();
         
         Uri openAiEndpoint = new Uri(_configuration["OpenAiEndpoint"]);
         string openAiKey = _configuration["OpenAiKey"];
@@ -66,7 +65,7 @@ public class DoSearch
         
         
         StringBuilder prompt = new StringBuilder();
-        prompt.Append("You are a answering machine and this is the knowledge you have:");
+        prompt.AppendLine("As a Microsoft Azure certification instructor, you will be presented with a multiple-choice question that includes answer options. You will also receive three documentation snippets relevant to the question. Use these snippets to identify the correct answer. If the correct option is not evident from the snippets, you may browse the internet for additional information. Your output should be the selection of the correct option provided within the question.");
         await foreach (var result in results)
         {
             count++;
@@ -75,7 +74,15 @@ public class DoSearch
             prompt.AppendLine($"Snippet {count}:");
             prompt.AppendLine(doc.content);
         }
-        Console.WriteLine($"Total number of search results:{count}");
+        
+        if (answers != null)
+        {
+            prompt.AppendLine("Options:");
+            foreach (var answer in answers)
+            {
+                prompt.AppendLine($"Option: {answer}");
+            }
+        }
         
         Response<ChatCompletions> responseWithoutStream = await openAiClient.GetChatCompletionsAsync(
             "gpt-4",
