@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchThingy", "SearchThingy\SearchThingy.csproj", "{CF3AA77F-8B98-45C2-8B3D-007ABDE25FDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF3AA77F-8B98-45C2-8B3D-007ABDE25FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF3AA77F-8B98-45C2-8B3D-007ABDE25FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF3AA77F-8B98-45C2-8B3D-007ABDE25FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF3AA77F-8B98-45C2-8B3D-007ABDE25FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
